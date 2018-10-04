@@ -16,6 +16,11 @@ class UnionFindTree {
         }
     }
 
+    /**
+     * nodeが所属する木のrootを取得する
+     * @param a
+     * @return
+     */
     public int root(int a) {
         if(a == tree[a]) {
             return a;
@@ -26,10 +31,21 @@ class UnionFindTree {
         }
     }
 
+    /**
+     * node aとnode bが同じ集合に所属するか判定する
+     * @param a
+     * @param b
+     * @return
+     */
     public boolean same(int a, int b) {
         return root(a) == root(b);
     }
 
+    /**
+     * node aとnode bで併合する
+     * @param a
+     * @param b
+     */
     public void union(int a, int b) {
         int x = root(a);
         int y = root(b);
